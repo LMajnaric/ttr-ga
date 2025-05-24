@@ -1,0 +1,17 @@
+[project]
+name = "ttr-ga"
+version = "0.1.0"
+description = "A genetic algorithm/reinforcement learning approach to the board game Ticket to Ride"
+authors = [
+    {name = "lmajnaric",email = "luka.majnaric@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "networkx (>=3.4.2,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
