@@ -6,7 +6,7 @@ class Deck:
         self.train_cards = ["red", "blue", "green", "yellow", "black", "pink", "orange", "white"] * 12 + ["wild"] * 14
         random.shuffle(self.train_cards)
         self.ticket_cards = [("Seattle", "New York", 22), ("Los Angeles", "New York", 21), ("Los Angeles", "Miami", 20), ("Vancouver", "Montreal", 20), ("Portland", "Nashville", 17), ("San Francisco", "Atlanta", 17), ("Los Angeles", "Chicago", 16),
-                             ("Calgary", "Phoenix", 13), ("Montreal", "New Orleans", 13), ("Vancouver", "Santa Fe", 13), ("Boston", "Miami", 12), ("Winnipeg", "Houston", 12), ("Dallas", "New York", 11), ("Dnever", "Pittsburgh", 11),
+                             ("Calgary", "Phoenix", 13), ("Montreal", "New Orleans", 13), ("Vancouver", "Santa Fe", 13), ("Boston", "Miami", 12), ("Winnipeg", "Houston", 12), ("Dallas", "New York", 11), ("Denver", "Pittsburgh", 11),
                              ("Portland", "Phoenix", 11), ("Winnipeg", "Little Rock", 11), ("Duluth", "El Paso", 10), ("Toronto", "Miami", 10), ("Chicago", "Santa Fe", 9), ("Montreal", "Atlanta", 9), ("Sault St Marie", "Oklahoma City", 9),
                              ("Seattle", "Los Angeles", 9), ("Duluth", "Houston", 8), ("Helena", "Los Angeles", 8), ("Sault St Marie", "Nashville", 8), ("Calgary", "Salt Lake City", 7), ("Chicago", "New Orleans", 7), ("New York", "Atlanta", 6),
                              ("Kansas City", "Houston", 5), ("Denver", "El Paso", 4)]
