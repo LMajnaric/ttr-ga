@@ -2,6 +2,7 @@
 """Interactive test for Ticket to Ride gameplay"""
 
 import os
+import pytest
 from ttr_ga.board import Board
 from ttr_ga.player import HumanPlayer, Deck
 from ttr_ga.game import game_loop, GameState, execute_action, check_tickets, longest_continuous_path
@@ -57,6 +58,7 @@ def display_board_status(board):
 
 def test_interactive_gameplay():
     """Test a game with human players interactively"""
+    pytest.skip("Interactive test - skipped during automated testing")
     clear_screen()
     print("=== Ticket To Ride Interactive Gameplay Test ===")
     print("This will start a test game with 2-5 human players.")
