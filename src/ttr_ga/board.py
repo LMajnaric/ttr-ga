@@ -64,13 +64,12 @@ class Board:
             if 'claimed' not in route and not double_route_blocked:
                 route_color = route['color']
                 route_length = route['length']
-                
-                # If color wasn't specified, use the route's color
-                if color is None:
-                    color = route_color
-                
+
+                # Determine which color cards the player will use
+                card_color = color or route_color
+
                 # Check if player has required cards for this route
-                can_claim, cards_to_use = self._player_can_claim_route(player, route_color, route_length, color)
+                can_claim, cards_to_use = self._player_can_claim_route(player, route_color, route_length, card_color)
                 
                 if can_claim:
                     # Remove cards from player's hand
