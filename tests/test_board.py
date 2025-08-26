@@ -95,3 +95,24 @@ class TestBoard:
         # Same player attempts to claim second route
         result2 = board.claim_route(player1, city1, city2, player_count=4)
         assert result2 is False  # Should fail regardless of player count
+
+    def test_claim_route_without_color_selects_claimable_route(self, board, players):
+        """Player should claim a route whose color matches available cards when no color is specified"""
+        player1 = players[0]
+
+        # Ensure player only has blue cards so red route is not claimable
+        player1.hand = ['blue', 'blue']
+
+        city1, city2 = "New York", "Washington"
+
+        # Add two parallel routes with different colors. Add the blue route
+        # first so it is evaluated before the red one.
+        board.graph.add_edge(city1, city2, key=0, color='blue', length=2)
+        board.graph.add_edge(city1, city2, key=1, color='red', length=2)
+
+        # Player attempts to claim without specifying a color
+        result = board.claim_route(player1, city1, city2, player_count=4)
+
+        assert result is True
+        assert 'claimed' in board.graph[city1][city2][0]
+        assert board.graph[city1][city2][0]['claimed'] == player1.name
