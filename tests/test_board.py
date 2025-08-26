@@ -95,3 +95,15 @@ class TestBoard:
         # Same player attempts to claim second route
         result2 = board.claim_route(player1, city1, city2, player_count=4)
         assert result2 is False  # Should fail regardless of player count
+
+    def test_claim_route_triggers_final_round(self, board, players):
+        """Claiming a route with few trains left should trigger final round"""
+        player1 = players[0]
+        player1.trains = 2
+
+        city1, city2 = "Chicago", "Detroit"
+        board.graph.add_edge(city1, city2, color='blue', length=1)
+
+        result = board.claim_route(player1, city1, city2)
+
+        assert result == (True, "final_round")
